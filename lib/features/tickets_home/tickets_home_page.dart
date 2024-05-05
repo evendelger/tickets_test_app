@@ -18,6 +18,7 @@ class TicketsHomePage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: BlocBuilder<TicketsHomeBloc, TicketsHomeState>(
+          buildWhen: (pr, cu) => pr.commonStatus != cu.commonStatus,
           builder: (context, state) => switch (state.commonStatus) {
             CommonStatus.loading => const LoadingIndicator(),
             CommonStatus.loaded => LoadedTickets(state: state),

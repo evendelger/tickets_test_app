@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tickets_test_app/common/scaffolds/home_scaffold.dart';
+import 'package:tickets_test_app/features/search_by_country/search_by_country_page.dart';
 import 'package:tickets_test_app/features/tickets_home/tickets_home_page.dart';
 import 'package:tickets_test_app/features/briefly/briefly_page.dart';
 import 'package:tickets_test_app/features/hotels/hotels_page.dart';
@@ -27,6 +28,19 @@ final class AppRouter {
                 path: '/tickets_home',
                 name: 'tickets_home',
                 builder: (context, state) => const TicketsHomePage(),
+                routes: [
+                  GoRoute(
+                    path: 'search_by_country',
+                    name: 'search_by_country',
+                    builder: (context, state) {
+                      final extra = state.extra as Map<String, Object>;
+                      return SearchByCountryPage(
+                        departurePlace: extra['departurePlace'] as String,
+                        arrivalPlace: extra['arrivalPlace'] as String,
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           ),

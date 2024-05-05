@@ -22,7 +22,7 @@ _$TicketOfferImpl _$$TicketOfferImplFromJson(Map<String, dynamic> json) =>
     _$TicketOfferImpl(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,
-      timeRange: dateTimeFromJson(json['time_range'] as List<String>),
+      timeRange: dateTimeFromJson(json['time_range'] as List),
       price: Price.fromJson(json['price'] as Map<String, dynamic>),
     );
 

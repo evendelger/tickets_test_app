@@ -32,4 +32,5 @@ class TicketOffer with _$TicketOffer {
   factory TicketOffer.fromJson(Map<String, Object?> json) => _$TicketOfferFromJson(json);
 }
 
-List<DateTime> dateTimeFromJson(List<String> timestamps) => timestamps.map(DateFormat.Hm().parse).toList();
+List<DateTime> dateTimeFromJson(List<dynamic> timestamps) =>
+    timestamps.map((timestamp) => DateFormat.Hm().parse(timestamp as String)).toList();

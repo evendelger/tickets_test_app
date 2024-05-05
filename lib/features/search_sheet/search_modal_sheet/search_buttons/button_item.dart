@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tickets_test_app/common/theme/app_fonts.dart';
+import 'package:tickets_test_app/common/theme/app_text_styles.dart';
 import 'package:tickets_test_app/features/search_sheet/domain/button_data.dart';
 
 class ButtonItem extends StatelessWidget {
@@ -32,7 +32,7 @@ class ButtonItem extends StatelessWidget {
             SizedBox(height: 8.h),
             Text(
               buttonData.title,
-              style: AppFonts.regular14,
+              style: AppTextStyles.regular14,
               textAlign: TextAlign.center,
             ),
           ],

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tickets_test_app/common/constants/constants.dart';
 import 'package:tickets_test_app/common/theme/app_colors.dart';
-import 'package:tickets_test_app/common/theme/app_fonts.dart';
+import 'package:tickets_test_app/common/theme/app_text_styles.dart';
+import 'package:tickets_test_app/common/widgets/custom_text_field.dart';
 import 'package:tickets_test_app/common/widgets/rounded_card.dart';
 import 'package:tickets_test_app/features/search_sheet/search_sheet_page.dart';
 import 'package:tickets_test_app/features/tickets_home/bloc/tickets_home_bloc.dart';
@@ -60,27 +62,18 @@ class _TicketsButtonState extends State<TicketsButton> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextField(
+                    CustomTextField(
                       controller: departurePlaceController,
                       onChanged: _onChangePlace,
-                      style: AppFonts.semibold16.copyWith(color: AppColors.white),
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(r'[а-яА-Я]')),
-                      ],
-                      decoration: InputDecoration(
-                        isCollapsed: true,
-                        isDense: true,
-                        border: InputBorder.none,
-                        hintStyle: AppFonts.semibold16,
-                        hintText: 'Откуда - Москва',
-                      ),
+                      onSubmitted: _onSearchTap,
+                      hintText: Constants.departureHint,
                     ),
                     //SizedBox(height: 8.h),
                     Divider(height: 1.h, color: AppColors.grey5),
                     //SizedBox(height: 8.h),
                     GestureDetector(
-                      onTap: () => _showModalSheet(departurePlaceController.text),
-                      child: Text('Куда - Турция', style: AppFonts.semibold16),
+                      onTap: () => _onSearchTap(departurePlaceController.text),
+                      child: Text(Constants.arrivalHint, style: AppTextStyles.semibold16),
                     ),
                   ],
                 ),
@@ -96,7 +89,8 @@ class _TicketsButtonState extends State<TicketsButton> {
     context.read<TicketsHomeBloc>().add(ChangeDeparturePlace(place: value));
   }
 
-  Future<void> _showModalSheet(String departurePlace) async {
+  Future<void> _onSearchTap(String departurePlace) async {
+    if (departurePlaceController.text.isEmpty) return;
     await showModalBottomSheet(
       useRootNavigator: true,
       context: context,

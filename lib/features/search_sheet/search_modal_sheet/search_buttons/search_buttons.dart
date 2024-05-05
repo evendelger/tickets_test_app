@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tickets_test_app/common/theme/app_colors.dart';
-import 'package:tickets_test_app/common/theme/app_fonts.dart';
+import 'package:tickets_test_app/common/theme/app_text_styles.dart';
 import 'package:tickets_test_app/features/search_sheet/domain/button_data.dart';
 import 'package:tickets_test_app/features/search_sheet/search_modal_sheet/search_buttons/button_item.dart';
 import 'package:tickets_test_app/generated/flutter_gen/assets.gen.dart';
@@ -10,7 +10,7 @@ import 'package:tickets_test_app/generated/flutter_gen/assets.gen.dart';
 class SearchButtons extends StatelessWidget {
   const SearchButtons({super.key, required this.onSelectDeparturePlace});
 
-  final void Function(String value) onSelectDeparturePlace;
+  final void Function(String, BuildContext) onSelectDeparturePlace;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,9 @@ class SearchButtons extends StatelessWidget {
         _buttonsData.length,
         (index) => ButtonItem(
           buttonData: _buttonsData[index],
-          onTap:
-              _buttonsData[index].popBack ? () => _showPopDialog(context) : () => onSelectDeparturePlace('Куда угодно'),
+          onTap: _buttonsData[index].popBack
+              ? () => _showPopDialog(context)
+              : () => onSelectDeparturePlace('Куда угодно', context),
         ),
       ),
     );
@@ -32,7 +33,7 @@ class SearchButtons extends StatelessWidget {
     showDialog(
       context: context,
       builder: (_) {
-        final textStyle = AppFonts.regular14;
+        final textStyle = AppTextStyles.regular14;
 
         return AlertDialog(
           backgroundColor: AppColors.grey3,

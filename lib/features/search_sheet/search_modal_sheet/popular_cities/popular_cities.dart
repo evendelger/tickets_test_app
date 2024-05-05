@@ -8,7 +8,7 @@ import 'package:tickets_test_app/generated/flutter_gen/assets.gen.dart';
 class PopularCities extends StatelessWidget {
   const PopularCities({super.key, required this.onSelectDeparturePlace});
 
-  final void Function(String value) onSelectDeparturePlace;
+  final void Function(String, BuildContext) onSelectDeparturePlace;
 
   @override
   Widget build(BuildContext context) {

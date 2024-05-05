@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tickets_test_app/common/theme/app_colors.dart';
-import 'package:tickets_test_app/common/theme/app_fonts.dart';
+import 'package:tickets_test_app/common/theme/app_text_styles.dart';
 import 'package:tickets_test_app/domain/offers/offers.dart';
 import 'package:tickets_test_app/features/tickets_home/widgets/offers_feed/feed_item.dart';
 
@@ -19,12 +19,12 @@ class OffersFeed extends StatelessWidget {
       children: [
         Text(
           'Музыкально отлететь',
-          style: AppFonts.semibold22.copyWith(color: AppColors.white),
+          style: AppTextStyles.semibold22.copyWith(color: AppColors.white),
           textAlign: TextAlign.left,
         ),
-        SizedBox(height: 25.h),
+        SizedBox(height: 12.h),
         SizedBox(
-          height: 220.h,
+          height: 235.h,
           child: ListView.separated(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
