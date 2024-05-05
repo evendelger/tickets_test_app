@@ -22,7 +22,6 @@ class Offer with _$Offer {
     required String title,
     required String town,
     required Price price,
-    @JsonKey(name: 'provider_name') required String providerName,
   }) = _Offer;
 
   factory Offer.fromJson(Map<String, Object?> json) => _$OfferFromJson(json);

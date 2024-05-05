@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tickets_test_app/common/scaffolds/home_scaffold.dart';
-import 'package:tickets_test_app/features/air_tickets/ait_tickets_page.dart';
+import 'package:tickets_test_app/features/tickets_home/tickets_home_page.dart';
 import 'package:tickets_test_app/features/briefly/briefly_page.dart';
 import 'package:tickets_test_app/features/hotels/hotels_page.dart';
 import 'package:tickets_test_app/features/profile/profile_page.dart';
@@ -15,20 +15,18 @@ final class AppRouter {
   GoRouter get router => _router;
 
   final _router = GoRouter(
-    navigatorKey: _rootNavigatorKey,
     debugLogDiagnostics: kDebugMode,
-    initialLocation: '/air_tickets',
+    initialLocation: '/tickets_home',
     routes: [
       StatefulShellRoute.indexedStack(
-        parentNavigatorKey: _shellNavigatorKey,
         builder: (context, state, child) => HomeScaffold(child: child),
         branches: [
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: '/air_tickets',
-                name: 'air_tickets',
-                builder: (context, state) => const AirTicketsPage(),
+                path: '/tickets_home',
+                name: 'tickets_home',
+                builder: (context, state) => const TicketsHomePage(),
               ),
             ],
           ),

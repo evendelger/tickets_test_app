@@ -16,5 +16,22 @@ abstract final class AppFonts {
         fontWeight: FontWeight.w600,
         color: AppColors.grey6,
         fontFamily: FontFamily.sFPro,
+        decoration: TextDecoration.none,
+        decorationThickness: 0,
+        height: (1.3 * 16) / 16.sp,
+      );
+
+  static TextStyle get regular10 => TextStyle(
+        fontSize: 10.sp,
+        fontWeight: FontWeight.w400,
+        color: AppColors.grey6,
+        fontFamily: FontFamily.sFPro,
+      );
+
+  static TextStyle get regular14 => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w400,
+        color: AppColors.white,
+        fontFamily: FontFamily.sFPro,
       );
 }

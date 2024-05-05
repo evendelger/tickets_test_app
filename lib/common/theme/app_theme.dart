@@ -7,6 +7,7 @@ abstract final class AppTheme {
     return ThemeData(
       useMaterial3: true,
       fontFamily: FontFamily.sFPro,
+      //colorScheme: ColorScheme.fromSeed(seedColor: AppColors.black),
       scaffoldBackgroundColor: AppColors.black,
     );
   }

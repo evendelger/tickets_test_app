@@ -22,7 +22,6 @@ _$OfferImpl _$$OfferImplFromJson(Map<String, dynamic> json) => _$OfferImpl(
       title: json['title'] as String,
       town: json['town'] as String,
       price: Price.fromJson(json['price'] as Map<String, dynamic>),
-      providerName: json['provider_name'] as String,
     );
 
 Map<String, dynamic> _$$OfferImplToJson(_$OfferImpl instance) =>
@@ -31,5 +30,4 @@ Map<String, dynamic> _$$OfferImplToJson(_$OfferImpl instance) =>
       'title': instance.title,
       'town': instance.town,
       'price': instance.price,
-      'provider_name': instance.providerName,
     };

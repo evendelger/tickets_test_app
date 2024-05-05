@@ -14,12 +14,14 @@ dependencies:
   flutter_bloc: ^8.1.5
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
+  fpdart: ^1.1.0
   freezed_annotation: ^2.4.1
   get_it: ^7.7.0
   go_router: ^14.0.2
   intl: ^0.19.0
   json_annotation: ^4.9.0
   retrofit: ^4.1.0
+  shared_preferences: ^2.2.3
   talker_bloc_logger: ^4.1.5
   talker_dio_logger: ^4.1.5
 
@@ -42,41 +44,16 @@ flutter:
   fonts:
     - family: SFPro
       fonts:
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Black.ttf
-          weight: 900
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Blackitalic.ttf
-          style: italic
-          weight: 900
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Bold.ttf
+        - asset: assets/fonts/sf_pro/SFProDisplay-Bold.ttf
           weight: 700
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Bolditalic.ttf
-          style: italic
-          weight: 700
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Semibold.ttf
+        - asset: assets/fonts/sf_pro/SFProDisplay-Semibold.ttf
           weight: 600
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Semibolditalic.ttf
-          style: italic
-          weight: 600
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Medium.ttf
+        - asset: assets/fonts/sf_pro/SFProDisplay-Medium.ttf
           weight: 500
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Mediumitalic.ttf
-          style: italic
-          weight: 500
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Regular.ttf
+        - asset: assets/fonts/sf_pro/SFProDisplay-Regular.ttf
           weight: 400
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Regularitalic.ttf
-          style: italic
-          weight: 400
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Light.ttf
+        - asset: assets/fonts/sf_pro/SFProDisplay-Light.ttf
           weight: 300
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Lightitalic.ttf
-          style: italic
-          weight: 300
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/sf_pro/SF-Pro-Display-Thinitalic.ttf
-          style: italic
-          weight: 100
 
 flutter_gen:
   output: lib/generated/flutter_gen

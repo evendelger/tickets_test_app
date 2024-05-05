@@ -162,8 +162,6 @@ mixin _$Offer {
   String get title => throw _privateConstructorUsedError;
   String get town => throw _privateConstructorUsedError;
   Price get price => throw _privateConstructorUsedError;
-  @JsonKey(name: 'provider_name')
-  String get providerName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -175,12 +173,7 @@ abstract class $OfferCopyWith<$Res> {
   factory $OfferCopyWith(Offer value, $Res Function(Offer) then) =
       _$OfferCopyWithImpl<$Res, Offer>;
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String town,
-      Price price,
-      @JsonKey(name: 'provider_name') String providerName});
+  $Res call({int id, String title, String town, Price price});
 
   $PriceCopyWith<$Res> get price;
 }
@@ -202,7 +195,6 @@ class _$OfferCopyWithImpl<$Res, $Val extends Offer>
     Object? title = null,
     Object? town = null,
     Object? price = null,
-    Object? providerName = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -221,10 +213,6 @@ class _$OfferCopyWithImpl<$Res, $Val extends Offer>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as Price,
-      providerName: null == providerName
-          ? _value.providerName
-          : providerName // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 
@@ -244,12 +232,7 @@ abstract class _$$OfferImplCopyWith<$Res> implements $OfferCopyWith<$Res> {
       __$$OfferImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String town,
-      Price price,
-      @JsonKey(name: 'provider_name') String providerName});
+  $Res call({int id, String title, String town, Price price});
 
   @override
   $PriceCopyWith<$Res> get price;
@@ -270,7 +253,6 @@ class __$$OfferImplCopyWithImpl<$Res>
     Object? title = null,
     Object? town = null,
     Object? price = null,
-    Object? providerName = null,
   }) {
     return _then(_$OfferImpl(
       id: null == id
@@ -289,10 +271,6 @@ class __$$OfferImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as Price,
-      providerName: null == providerName
-          ? _value.providerName
-          : providerName // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -304,8 +282,7 @@ class _$OfferImpl implements _Offer {
       {required this.id,
       required this.title,
       required this.town,
-      required this.price,
-      @JsonKey(name: 'provider_name') required this.providerName});
+      required this.price});
 
   factory _$OfferImpl.fromJson(Map<String, dynamic> json) =>
       _$$OfferImplFromJson(json);
@@ -318,13 +295,10 @@ class _$OfferImpl implements _Offer {
   final String town;
   @override
   final Price price;
-  @override
-  @JsonKey(name: 'provider_name')
-  final String providerName;
 
   @override
   String toString() {
-    return 'Offer(id: $id, title: $title, town: $town, price: $price, providerName: $providerName)';
+    return 'Offer(id: $id, title: $title, town: $town, price: $price)';
   }
 
   @override
@@ -335,15 +309,12 @@ class _$OfferImpl implements _Offer {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.town, town) || other.town == town) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.providerName, providerName) ||
-                other.providerName == providerName));
+            (identical(other.price, price) || other.price == price));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, title, town, price, providerName);
+  int get hashCode => Object.hash(runtimeType, id, title, town, price);
 
   @JsonKey(ignore: true)
   @override
@@ -361,12 +332,10 @@ class _$OfferImpl implements _Offer {
 
 abstract class _Offer implements Offer {
   const factory _Offer(
-          {required final int id,
-          required final String title,
-          required final String town,
-          required final Price price,
-          @JsonKey(name: 'provider_name') required final String providerName}) =
-      _$OfferImpl;
+      {required final int id,
+      required final String title,
+      required final String town,
+      required final Price price}) = _$OfferImpl;
 
   factory _Offer.fromJson(Map<String, dynamic> json) = _$OfferImpl.fromJson;
 
@@ -378,9 +347,6 @@ abstract class _Offer implements Offer {
   String get town;
   @override
   Price get price;
-  @override
-  @JsonKey(name: 'provider_name')
-  String get providerName;
   @override
   @JsonKey(ignore: true)
   _$$OfferImplCopyWith<_$OfferImpl> get copyWith =>
