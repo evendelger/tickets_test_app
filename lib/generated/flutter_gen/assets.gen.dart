@@ -23,10 +23,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/change.svg
   SvgGenImage get change => const SvgGenImage('assets/icons/change.svg');
 
-  /// File path: assets/icons/check_circle.svg
-  SvgGenImage get checkCircle =>
-      const SvgGenImage('assets/icons/check_circle.svg');
-
   /// File path: assets/icons/close.svg
   SvgGenImage get close => const SvgGenImage('assets/icons/close.svg');
 
@@ -77,18 +73,11 @@ class $AssetsIconsGen {
   /// File path: assets/icons/search.svg
   SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
 
-  /// File path: assets/icons/share.svg
-  SvgGenImage get share => const SvgGenImage('assets/icons/share.svg');
-
-  /// File path: assets/icons/tooltip.svg
-  SvgGenImage get tooltip => const SvgGenImage('assets/icons/tooltip.svg');
-
   /// List of all assets
   List<SvgGenImage> get values => [
         add,
         calendar,
         change,
-        checkCircle,
         close,
         earth,
         filter,
@@ -104,9 +93,7 @@ class $AssetsIconsGen {
         rightArrow,
         route,
         schedule,
-        search,
-        share,
-        tooltip
+        search
       ];
 }
 

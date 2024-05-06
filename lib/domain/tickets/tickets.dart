@@ -27,7 +27,7 @@ class Ticket with _$Ticket {
     @JsonKey(name: 'has_transfer') required bool hasTransfer,
     @JsonKey(name: 'has_visa_transfer') required bool hasVisaTransfer,
     required Luggage luggage,
-    required HandLuggage handLuggage,
+    @JsonKey(name: 'hand_luggage') required HandLuggage handLuggage,
     @JsonKey(name: 'is_returnable') required bool isReturnable,
     @JsonKey(name: 'is_exchangable') required bool isExchangable,
   }) = _Ticket;

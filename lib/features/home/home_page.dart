@@ -4,24 +4,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tickets_test_app/common/enums/common_status.dart';
 import 'package:tickets_test_app/common/widgets/error_message.dart';
 import 'package:tickets_test_app/common/widgets/loading_incidator.dart';
-import 'package:tickets_test_app/features/tickets_home/bloc/tickets_home_bloc.dart';
-import 'package:tickets_test_app/features/tickets_home/widgets/loaded_tickets.dart';
+import 'package:tickets_test_app/features/home/bloc/offers_bloc.dart';
+import 'package:tickets_test_app/features/home/widgets/loaded_offers.dart';
 import 'package:tickets_test_app/service_locator.dart';
 
-class TicketsHomePage extends StatelessWidget {
-  const TicketsHomePage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<TicketsHomeBloc>(
+    return BlocProvider<OffersBloc>(
       create: (context) => getIt()..add(const GetOffers()),
       child: Padding(
         padding: const EdgeInsets.all(16),
-        child: BlocBuilder<TicketsHomeBloc, TicketsHomeState>(
+        child: BlocBuilder<OffersBloc, OffersState>(
           buildWhen: (pr, cu) => pr.commonStatus != cu.commonStatus,
           builder: (context, state) => switch (state.commonStatus) {
             CommonStatus.loading => const LoadingIndicator(),
-            CommonStatus.loaded => LoadedTickets(state: state),
+            CommonStatus.loaded => LoadedOffers(state: state),
             CommonStatus.error => ErrorMessage(failure: state.failure!),
           },
         ),

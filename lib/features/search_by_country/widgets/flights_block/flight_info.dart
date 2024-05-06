@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:tickets_test_app/common/theme/app_colors.dart';
@@ -20,7 +18,7 @@ class TicketOfferInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = AppTextStyles.regular14;
+    final textStyle = AppTextStyles.medium14;
     final italicStyle = textStyle.copyWith(fontStyle: FontStyle.italic);
 
     return DecoratedBox(

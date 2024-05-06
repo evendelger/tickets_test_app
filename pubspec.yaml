@@ -48,10 +48,19 @@ flutter:
           weight: 700
         - asset: assets/fonts/sf_pro/SFProDisplay-Semibold.ttf
           weight: 600
+        - asset: assets/fonts/sf_pro/SFProDisplay-SemiboldItalic.ttf
+          weight: 600
+          style: italic
         - asset: assets/fonts/sf_pro/SFProDisplay-Medium.ttf
           weight: 500
+        - asset: assets/fonts/sf_pro/SFProDisplay-MediumItalic.ttf
+          weight: 500
+          style: italic
         - asset: assets/fonts/sf_pro/SFProDisplay-Regular.ttf
           weight: 400
+        - asset: assets/fonts/sf_pro/SFProDisplay-RegularItalic.ttf
+          weight: 400
+          style: italic
         - asset: assets/fonts/sf_pro/SFProDisplay-Light.ttf
           weight: 300
 

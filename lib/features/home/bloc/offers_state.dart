@@ -1,7 +1,7 @@
-part of 'tickets_home_bloc.dart';
+part of 'offers_bloc.dart';
 
-class TicketsHomeState extends Equatable {
-  const TicketsHomeState._({
+class OffersState extends Equatable {
+  const OffersState._({
     required this.commonStatus,
     required this.departurePlace,
     required this.offers,
@@ -13,7 +13,7 @@ class TicketsHomeState extends Equatable {
   final Offers offers;
   final Failure? failure;
 
-  factory TicketsHomeState.initial() => const TicketsHomeState._(
+  factory OffersState.initial() => const OffersState._(
         commonStatus: CommonStatus.loading,
         departurePlace: '',
         offers: Offers(offers: []),
@@ -22,13 +22,13 @@ class TicketsHomeState extends Equatable {
   @override
   List<Object?> get props => [commonStatus, departurePlace, offers, failure];
 
-  TicketsHomeState copyWith({
+  OffersState copyWith({
     CommonStatus? commonStatus,
     String? departurePlace,
     Offers? offers,
     Failure? failure,
   }) {
-    return TicketsHomeState._(
+    return OffersState._(
       commonStatus: commonStatus ?? this.commonStatus,
       departurePlace: departurePlace ?? this.departurePlace,
       offers: offers ?? this.offers,

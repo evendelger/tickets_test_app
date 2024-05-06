@@ -172,6 +172,7 @@ mixin _$Ticket {
   @JsonKey(name: 'has_visa_transfer')
   bool get hasVisaTransfer => throw _privateConstructorUsedError;
   Luggage get luggage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'hand_luggage')
   HandLuggage get handLuggage => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_returnable')
   bool get isReturnable => throw _privateConstructorUsedError;
@@ -199,7 +200,7 @@ abstract class $TicketCopyWith<$Res> {
       @JsonKey(name: 'has_transfer') bool hasTransfer,
       @JsonKey(name: 'has_visa_transfer') bool hasVisaTransfer,
       Luggage luggage,
-      HandLuggage handLuggage,
+      @JsonKey(name: 'hand_luggage') HandLuggage handLuggage,
       @JsonKey(name: 'is_returnable') bool isReturnable,
       @JsonKey(name: 'is_exchangable') bool isExchangable});
 
@@ -352,7 +353,7 @@ abstract class _$$TicketImplCopyWith<$Res> implements $TicketCopyWith<$Res> {
       @JsonKey(name: 'has_transfer') bool hasTransfer,
       @JsonKey(name: 'has_visa_transfer') bool hasVisaTransfer,
       Luggage luggage,
-      HandLuggage handLuggage,
+      @JsonKey(name: 'hand_luggage') HandLuggage handLuggage,
       @JsonKey(name: 'is_returnable') bool isReturnable,
       @JsonKey(name: 'is_exchangable') bool isExchangable});
 
@@ -464,7 +465,7 @@ class _$TicketImpl implements _Ticket {
       @JsonKey(name: 'has_transfer') required this.hasTransfer,
       @JsonKey(name: 'has_visa_transfer') required this.hasVisaTransfer,
       required this.luggage,
-      required this.handLuggage,
+      @JsonKey(name: 'hand_luggage') required this.handLuggage,
       @JsonKey(name: 'is_returnable') required this.isReturnable,
       @JsonKey(name: 'is_exchangable') required this.isExchangable});
 
@@ -495,6 +496,7 @@ class _$TicketImpl implements _Ticket {
   @override
   final Luggage luggage;
   @override
+  @JsonKey(name: 'hand_luggage')
   final HandLuggage handLuggage;
   @override
   @JsonKey(name: 'is_returnable')
@@ -579,7 +581,7 @@ abstract class _Ticket implements Ticket {
       @JsonKey(name: 'has_transfer') required final bool hasTransfer,
       @JsonKey(name: 'has_visa_transfer') required final bool hasVisaTransfer,
       required final Luggage luggage,
-      required final HandLuggage handLuggage,
+      @JsonKey(name: 'hand_luggage') required final HandLuggage handLuggage,
       @JsonKey(name: 'is_returnable') required final bool isReturnable,
       @JsonKey(name: 'is_exchangable')
       required final bool isExchangable}) = _$TicketImpl;
@@ -610,6 +612,7 @@ abstract class _Ticket implements Ticket {
   @override
   Luggage get luggage;
   @override
+  @JsonKey(name: 'hand_luggage')
   HandLuggage get handLuggage;
   @override
   @JsonKey(name: 'is_returnable')

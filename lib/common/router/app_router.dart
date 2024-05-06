@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tickets_test_app/common/scaffolds/home_scaffold.dart';
 import 'package:tickets_test_app/features/search_by_country/search_by_country_page.dart';
-import 'package:tickets_test_app/features/tickets_home/tickets_home_page.dart';
+import 'package:tickets_test_app/features/tickets/tickets_page.dart';
+import 'package:tickets_test_app/features/home/home_page.dart';
 import 'package:tickets_test_app/features/briefly/briefly_page.dart';
 import 'package:tickets_test_app/features/hotels/hotels_page.dart';
 import 'package:tickets_test_app/features/profile/profile_page.dart';
@@ -17,7 +18,7 @@ final class AppRouter {
 
   final _router = GoRouter(
     debugLogDiagnostics: kDebugMode,
-    initialLocation: '/tickets_home',
+    initialLocation: '/home',
     routes: [
       StatefulShellRoute.indexedStack(
         builder: (context, state, child) => HomeScaffold(child: child),
@@ -25,20 +26,34 @@ final class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: '/tickets_home',
-                name: 'tickets_home',
-                builder: (context, state) => const TicketsHomePage(),
+                path: '/home',
+                name: 'home',
+                builder: (context, state) => const HomePage(),
                 routes: [
                   GoRoute(
                     path: 'search_by_country',
                     name: 'search_by_country',
                     builder: (context, state) {
-                      final extra = state.extra as Map<String, Object>;
+                      final extra = state.extra as Map<String, dynamic>;
                       return SearchByCountryPage(
                         departurePlace: extra['departurePlace'] as String,
                         arrivalPlace: extra['arrivalPlace'] as String,
                       );
                     },
+                    routes: [
+                      GoRoute(
+                        path: 'tickets',
+                        name: 'tickets',
+                        builder: (context, state) {
+                          final extra = state.extra as Map<String, dynamic>;
+                          return TicketsPage(
+                            departurePlace: extra['departurePlace'] as String,
+                            arrivalPlace: extra['arrivalPlace'] as String,
+                            arrivalDate: extra['arrivalDate'] as DateTime,
+                          );
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),

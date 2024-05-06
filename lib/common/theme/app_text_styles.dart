@@ -50,4 +50,12 @@ abstract final class AppTextStyles {
         color: AppColors.white,
         fontFamily: FontFamily.sFPro,
       );
+
+  static TextStyle get medium14 => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+        color: AppColors.white,
+        fontFamily: FontFamily.sFPro,
+        // height: (1.3 * 16.sp) / 16.sp, ???
+      );
 }

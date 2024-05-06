@@ -17,7 +17,7 @@ class PassengerInfoChip extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             '1,эконом',
-            style: AppTextStyles.regular14.copyWith(fontStyle: FontStyle.italic),
+            style: AppTextStyles.medium14.copyWith(fontStyle: FontStyle.italic),
           ),
         ],
       ),

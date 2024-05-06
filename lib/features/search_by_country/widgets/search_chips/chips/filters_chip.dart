@@ -17,7 +17,7 @@ class FiltersChip extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             'фильтры',
-            style: AppTextStyles.regular14.copyWith(fontStyle: FontStyle.italic),
+            style: AppTextStyles.medium14.copyWith(fontStyle: FontStyle.italic),
           ),
         ],
       ),

@@ -8,11 +8,11 @@ import 'package:tickets_test_app/domain/offers/offers.dart';
 import 'package:tickets_test_app/infrastructure/tickets/repository/tickets_repository.dart';
 import 'package:tickets_test_app/service_locator.dart';
 
-part 'tickets_home_event.dart';
-part 'tickets_home_state.dart';
+part 'offers_event.dart';
+part 'offers_state.dart';
 
-class TicketsHomeBloc extends Bloc<TicketsHomeEvent, TicketsHomeState> {
-  TicketsHomeBloc(this.ticketsRepository) : super(TicketsHomeState.initial()) {
+class OffersBloc extends Bloc<OffersEvent, OffersState> {
+  OffersBloc(this.ticketsRepository) : super(OffersState.initial()) {
     on<GetOffers>(_getOffers);
     on<ChangeDeparturePlace>(_changeDeparturePlace);
   }
@@ -21,7 +21,7 @@ class TicketsHomeBloc extends Bloc<TicketsHomeEvent, TicketsHomeState> {
 
   Future<void> _getOffers(
     GetOffers event,
-    Emitter<TicketsHomeState> emit,
+    Emitter<OffersState> emit,
   ) async {
     final departurePlace = getIt<SharedPreferences>().getString(PrefsKeys.departurePlace) ?? '';
 
@@ -42,7 +42,7 @@ class TicketsHomeBloc extends Bloc<TicketsHomeEvent, TicketsHomeState> {
 
   void _changeDeparturePlace(
     ChangeDeparturePlace event,
-    Emitter<TicketsHomeState> emit,
+    Emitter<OffersState> emit,
   ) {
     getIt<SharedPreferences>().setString(PrefsKeys.departurePlace, event.place);
   }

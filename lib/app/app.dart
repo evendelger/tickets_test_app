@@ -27,6 +27,8 @@ class _TicketsAppState extends State<TicketsApp> {
       child: MaterialApp.router(
         title: 'TicketsApp',
         theme: AppTheme.mainDark(),
+        debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.dark,
         routerConfig: _poGoRouter,
       ),
     );

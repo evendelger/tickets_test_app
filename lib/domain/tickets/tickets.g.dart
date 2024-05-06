@@ -30,7 +30,7 @@ _$TicketImpl _$$TicketImplFromJson(Map<String, dynamic> json) => _$TicketImpl(
       hasVisaTransfer: json['has_visa_transfer'] as bool,
       luggage: Luggage.fromJson(json['luggage'] as Map<String, dynamic>),
       handLuggage:
-          HandLuggage.fromJson(json['handLuggage'] as Map<String, dynamic>),
+          HandLuggage.fromJson(json['hand_luggage'] as Map<String, dynamic>),
       isReturnable: json['is_returnable'] as bool,
       isExchangable: json['is_exchangable'] as bool,
     );
@@ -47,7 +47,7 @@ Map<String, dynamic> _$$TicketImplToJson(_$TicketImpl instance) =>
       'has_transfer': instance.hasTransfer,
       'has_visa_transfer': instance.hasVisaTransfer,
       'luggage': instance.luggage,
-      'handLuggage': instance.handLuggage,
+      'hand_luggage': instance.handLuggage,
       'is_returnable': instance.isReturnable,
       'is_exchangable': instance.isExchangable,
     };

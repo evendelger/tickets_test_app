@@ -20,7 +20,7 @@ class DateChip extends StatefulWidget {
 class _DateChipState extends State<DateChip> {
   final _firstDate = DateTime.now();
   late DateTime? _selectedDate;
-  final textStyle = AppTextStyles.regular14.copyWith(fontStyle: FontStyle.italic);
+  final textStyle = AppTextStyles.medium14.copyWith(fontStyle: FontStyle.italic);
 
   @override
   void initState() {
@@ -57,14 +57,16 @@ class _DateChipState extends State<DateChip> {
   }
 
   Future<void> _showDatePicker(BuildContext context) async {
+    final arrivalBlocDate = context.read<SearchByCountryBloc>().state.arrivalDate;
     final selectedDate = await showDatePicker(
       context: context,
-      firstDate: _firstDate,
+      firstDate: widget.isReturnDate ? arrivalBlocDate : _firstDate,
       lastDate: _firstDate.add(const Duration(days: 100)),
     );
     if (selectedDate != null && context.mounted) {
       setState(() => _selectedDate = selectedDate);
       if (!widget.isReturnDate) {
+        print('selectedDate');
         context.read<SearchByCountryBloc>().add(ChangeArrivalDate(date: selectedDate));
       }
     }
